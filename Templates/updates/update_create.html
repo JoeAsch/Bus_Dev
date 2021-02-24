@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header><h1>Issue Update</h1></header>
+    <section class="update-form">
+        <form method="post">
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea rows="3" class="form-control" name="description" style="width: 280px;" id="description"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="date_update">Date:</label>
+                <input type="date" class="form-control" style="width: 180px;" name="date_update" id="date_update"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary"> Update Issue</button>
+        </form>
+    </section>
+{% endblock %}

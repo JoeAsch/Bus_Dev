@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header><h2>Customer List</h2></header>
+
+ <section>
+        <div class="list-group mb-3">
+            {% for customer in customers %}
+            <div class="row mb-1 mt-1">
+                <h5 class="col-sm-4 list-group-item"><a href="/customers/edit_customer/{{customer._id}}">{{customer.name_last}}, {{customer.name_first}} </a></h5>
+                <h5 class="col-sm-2 list-group-item"><a href="/issues/issues_index/{{customer._id}}">Issues</a></h5>
+                <h5 class="col-sm-2 list-group-item"><a href="/issues/issue_create/{{customer._id}}">Add Issue</a></h5>
+
+            </div>
+            {% endfor %}
+        </div>
+            <h6>Click on Customer Name to view contact details!</h6>
+        <hr>
+            <button type="submit" class="btn btn-secondary mb-6">
+              <a href="/customers/add_customer" style="color:black">  Add Customer</a>
+            </button>
+ </section>
+{% endblock %}

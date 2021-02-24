@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header><h1>Issues</h1></header>
+
+ <section>
+        <div class="list-group mb-3">
+            {% for issue in issues %}
+                <div class="row mb-1 mt-1">
+                    <h5 class="col-sm-2 list-group-item">{{issue.date_start.strftime('%Y-%m-%d')}}</h5>
+                    <h5 class="col-sm-2 list-group-item">{{issue.status}}</h5>
+                    <h6 class="col-sm-4 list-group-item">{{issue.description}}</h6>
+                    <h6 class="col-sm-2 list-group-item"><a href="/updates/update_create/{{issue._id}}">Update</a> </h6>
+                    <h6 class="col-sm-2 list-group-item"><a href="/updates/update_index/{{issue._id}}">all updates</a> </h6>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+{% endblock %}

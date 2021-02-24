@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header><h1>Updates</h1></header>
+
+ <section>
+        <div class="list-group mb-3">
+            {% for update in updates %}
+                <div class="row mb-1 mt-1">
+                    <h5 class="col-sm-2 list-group-item">{{update.date_update.strftime('%Y-%m-%d')}}</h5>
+                    <h5 class="col-sm-2 list-group-item">{{update.description}}</h5>
+                    <h6 class="col-sm-2 list-group-item"><a href="/updates/update_create/{{update.issue_id}}">Update</a> </h6>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+{% endblock %}
