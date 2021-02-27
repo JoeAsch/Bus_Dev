@@ -9,9 +9,7 @@ from common.database import Database
 
 app = Flask(__name__)
 app.secret_key = 'jose'
-app.config.update(
-    ADMIN=os.environ.get('ADMIN')
-)
+
 
 
 @app.route("/", methods=['GET', 'POST'])
