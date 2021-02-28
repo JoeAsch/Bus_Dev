@@ -3,7 +3,7 @@ from views.users import user_blueprint
 from views.customer import customer_blueprint
 from views.issue import issue_blueprint
 from views.update import update_blueprint
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from common.database import Database
 
 
